@@ -11,7 +11,13 @@
 
     <name>Tamper Maven Plugin</name>
     <description>Replace Spring Cloud Config Maven Plugin</description>
-    <url>https://github.com/junegod/spring-cloud-config-maven-plugin</url>
+    <url>https://github.com/junegod/tamper-maven-plugin</url>
+
+    <scm>
+        <connection>scm:git:git@github.com/junegod/tamper-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:junegod/tamper-maven-plugin.git</developerConnection>
+        <url>git@github.com:junegod/tamper-maven-plugin.git</url>
+    </scm>
 
     <licenses>
         <license>
@@ -193,19 +199,6 @@
 
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>icourt-release</id>
-            <name>icourt Release Repository</name>
-            <url>http://nexus.alphalawyer.cn/repository/icourt-release/</url>
-        </repository>
-        <snapshotRepository>
-            <id>icourt-snapshot</id>
-            <name>icourt Snapshot Repository</name>
-            <url>http://nexus.alphalawyer.cn/repository/icourt-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 
 </project>

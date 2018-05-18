@@ -1,15 +1,16 @@
 # Spring Cloud 配置中心配置本地化
 
-spring cloud配置中心的配置如果使用git的方式托管，存在一个问题，war包和配置是分离的，导致如果部署后要还原到其他版本，需要还原war包和配置中心的配置。
+`spring cloud`配置中心的配置如果使用git的方式托管，存在一个问题，war包和配置是分离的，导致如果部署后要还原到其他版本，需要还原war包和配置中心的配置。
 本插件很完美的解决这问题，基本思路：
 
-1.maven打包的时候从配置中心把配置下载下来
-2.修改本地的spring boot配置文件(一般是bootstrap.yml),禁用配置中心
+1.`maven`打包的时候从配置中心把配置下载下来
+
+2.修改本地的`spring boot`配置文件(一般是`bootstrap.yml`),禁用配置中心
 
 第二步会替换如下配置：
-* spring.cloud.config.enabled设为false
-* 增加或替换spring.profiles.active配置
-* 指定spring.config.name为${spring.application.name},application
+* `spring.cloud.config.enabled`设为`false`
+* 增加或替换`spring.profiles.active`配置
+* 指定`spring.config.name`为`${spring.application.name},application`
      
 这样就把配置也本地化了，一起打包在war里，不管是还原，还是docker容器化，都比较方便。
 同时，又没有损失统一配置的方便性，一举两得。
@@ -29,7 +30,7 @@ spring cloud配置中心的配置如果使用git的方式托管，存在一个�
         </execution>
     </executions>
 </plugin>
-<!-- 必须放在spring boo插件前面 -->
+<!-- 必须放在spring boot插件前面 -->
 <plugin>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -66,6 +67,6 @@ application.yaml
 
 `-c` 指定spring boot配置文件
 
-## todo
+## TODO
 
 如果本地和配置中心文件都存在，则需要合并，目前是不支持，会报错
