@@ -1,0 +1,19 @@
+# 测试中文
+spring:
+    application:
+        name: alpha-user
+    cloud:
+        config:
+            fail-fast: true
+            alpha: '中文'
+            label: master
+            uri: http://localhost:1111/registry/config
+            profile:
+                - local
+                - master
+                - dev
+            retry:
+                  initial-interval: 1000
+                  max-interval: 2000
+                  max-attempts: 100
+
