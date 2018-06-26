@@ -111,7 +111,7 @@ public class TamperServiceImpl implements ITamperService {
         Map<String,Object> valueMap = tamperConfig.getConfigValueMap();
         valueMap.put(ENABLED_KEY,false);
         valueMap.put(ACTIVE_PROFILE_KEY,valueMap.get(CONFIG_PROFILE_KEY));
-        valueMap.put(CONFIG_NAME_KEY,"${spring.application.name},application");
+        valueMap.put(CONFIG_NAME_KEY,"application,${spring.application.name}");
         try {
             String propertyString = convertPropertyString(valueMap);
             if(tamperConfig.isYaml()) {
